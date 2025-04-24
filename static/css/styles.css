@@ -1,5 +1,4 @@
 
-
   .App {
     text-align: center;
   }
@@ -51,7 +50,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffff00a9;
+    background: #4b1a25;
     color: #fff;
     padding: 0.75px 1px;
     border-radius: 5px;
@@ -64,6 +63,11 @@
     text-align: center;
     margin-top: 20px;
   }
+
+  div.Todo:hover {
+    background-color: cadetblue;
+  }
+
   .scr{
     overflow-y:scroll;
   }
@@ -81,7 +85,7 @@
   }
 
   .todo-btn:hover {
-    background: #8758ff;
+    background-color: #8758ff;
     color: #fff;
     border: none;
     padding: 0.55rem;
@@ -101,18 +105,18 @@ a{
 
 .todo-green {
   background-color: green;
-  /* Add other styles as needed */
+
 }
 
 .todo-red {
   background-color: red;
-  /* Add other styles as needed */
+
 }
 
 .anca{
   font-size: 25px;
     margin-top: 7px;
-    /* margin-left: -68px; */
+
     margin-right: -41px;
 }
 .heads{

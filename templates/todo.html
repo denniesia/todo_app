@@ -1,10 +1,55 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Font Awesome 5 Brands:wght@400&display=swap" />
+    <script src="https://kit.fontawesome.com/cb792c0850.js" crossorigin="anonymous"></script>
+    <title>To do</title>
+
 </head>
 <body>
+  <div class="signup-login">
+        <div>
+            <div>
+                <h1>Hello {{user}}</h1>
+            </div>
+            <div class=" signup-box scr">
+                <div class="heads">
+                    <!-- <div class="ancaa" title=""><i class="fa-solid fa-user"></i> </div> -->
+                    <div class="heading">Get Things Done? </div>
+                    <div class="anca"><a href="{% url 'signout' %}" class="sign"><i
+                                class="fa-solid fa-right-from-bracket"></i></a></div>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+
+                <input type="text" class="inp" name="title" required placeholder="Add New Task?">
+                <input class="submit-button" type="submit" value="Add Task">
+
+                <div class="line"></div>
+            </form>
+
+            {% for task in all_tasks %}
+                <div class="Todo">
+
+                    <p style="margin-left: 50px"> {{ task.title }}</p>
+                    <div>
+                        <a href="{% url 'edit_todo' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{% url 'delete-todo' task.id %}"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+  </div>
 
 </body>
 </html>
